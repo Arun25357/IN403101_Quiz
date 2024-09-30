@@ -27,14 +27,37 @@ const ExpenseForm = ({ onNewExpense }: { onNewExpense: () => void }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="amount" type="number" value={formData.amount} onChange={handleChange} placeholder="Amount" required />
-      <input name="date" type="date" value={formData.date} onChange={handleChange} required />
-      <select name="type" value={formData.type} onChange={handleChange}>
+    <form onSubmit={handleSubmit} style={{ margin: '0 auto', width: '300px' }}>
+      <input
+        name="amount"
+        type="number"
+        value={formData.amount}
+        onChange={handleChange}
+        placeholder="Amount"
+        required
+      />
+      <input
+        name="date"
+        type="date"
+        value={formData.date}
+        onChange={handleChange}
+        required
+      />
+      <select
+        name="type"
+        value={formData.type}
+        onChange={handleChange}
+      >
         <option value="income">Income</option>
         <option value="expense">Expense</option>
       </select>
-      <input name="note" type="text" value={formData.note} onChange={handleChange} placeholder="Note" />
+      <input
+        name="note"
+        type="text"
+        value={formData.note}
+        onChange={handleChange}
+        placeholder="Note"
+      />
       <button type="submit">Add</button>
     </form>
   );
